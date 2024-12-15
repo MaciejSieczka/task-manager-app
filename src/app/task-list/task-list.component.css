@@ -1,0 +1,95 @@
+.task-list-container {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    background-color: hsla(73, 85%, 87%, 0.433);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    margin: 30px auto;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.task-list-container button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #ffffff;
+    cursor: pointer;
+    transition:
+        background-color 0.3s ease,
+        transform 0.2s ease;
+    /* Dodanie efektu transform */
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.task-list-container button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.task-list-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    box-shadow: 0 4px 6px rgba(8, 6, 6, 0.05);
+}
+
+.task-list-container th,
+.task-list-container td {
+    font-size: 14px;
+    text-align: center;
+    padding: 12px;
+    border: 1px solid #ddd;
+    color: #333333;
+    transition: background-color 0.2s ease;
+}
+
+.task-list-container td button {
+    padding: 5px 10px;
+    font-size: 12px;
+    color: #ffffff;
+    background-color: #6c63ff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition:
+        background-color 0.3s ease,
+        transform 0.2s ease;
+    margin: 0;
+}
+
+.task-list-container td button:hover {
+    background-color: #4c41c4;
+    transform: scale(1.2);
+}
+
+.task-list-container [routerLink] {
+    color: #007bff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.task-list-container [routerLink]:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.tr_click:hover {
+    background-color: #a2b03c;
+    color: white;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.finished-task {
+    background-color: #ff0000;
+    color: #ff0000;
+}

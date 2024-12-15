@@ -1,0 +1,9 @@
+<div class="container">
+    <h2>Rejestracja</h2>
+    <form (ngSubmit)="onSubmit()">
+        <input type="text" [(ngModel)]="username" placeholder="Nazwa użytkownika" name="username" class="form-control" required />
+        <input type="password" [(ngModel)]="password" placeholder="Hasło" name="password" class="form-control" required />
+        <button type="submit" class="btn">Zarejestruj</button>
+        <p class="message">Masz już konto? <a [routerLink]="['/login']">Zaloguj</a></p>
+    </form>
+</div>

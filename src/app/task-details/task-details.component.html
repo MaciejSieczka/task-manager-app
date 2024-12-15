@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="header">
+        <span class="material-symbols-outlined back-icon" [routerLink]="['/tasks']" title="Back to List">
+            arrow_back_ios
+        </span>
+    </div>
+    <h2>Task Details</h2>
+    <div>
+        <p><span class="span_details">Nazwa zadania:</span> {{ task.title }}</p>
+        <p><span class="span_details">Opis:</span> {{ task?.description || 'Brak opisu' }}</p>
+        <p><span class="span_details">Status:</span> {{ task?.status || 'Brak statusu zadania' }}</p>
+        <p>
+            <span class="span_details">Przypisany użytkownik:</span>
+            {{ task.assignedTo?.username || 'Not assigned' }}
+        </p>
+        <p><span class="span_details">Czas utworzenia:</span> {{ task.createdAt | date }}</p>
+    </div>
+
+    <div>
+        <h3>Dodaj załącznik</h3>
+        <form (submit)="onFileUpload()">
+            <input type="file" #fileInput (change)="onFileSelected($event)" accept="*" class="form-control" />
+            <button type="submit" class="btn btn-primary" [disabled]="!selectedFile">
+                Prześlij
+            </button>
+        </form>
+    </div>
+
+    <div *ngIf="attachments && attachments.length > 0">
+        <h3>Załączniki</h3>
+        <ul>
+            <li *ngFor="let attachment of attachments">
+                <button (click)="downloadAttachment(attachment.id)" class="btn btn-link">
+                    Pobierz {{ attachment.fileName }}
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>

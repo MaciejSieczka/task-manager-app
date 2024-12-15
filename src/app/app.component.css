@@ -1,0 +1,36 @@
+.header {
+    font-family: "Poppins", sans-serif;
+    font-size: 20;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #9d86f1;
+    border-bottom: 1px solid #ddd;
+}
+
+.header-left {
+    text-align: left;
+}
+
+.header-right {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-login, .btn-logout, .btn-register {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.material-symbols-outlined {
+    font-size: 60px;
+    vertical-align: middle;
+}
+
+.header-left:hover {
+    cursor: pointer;
+}

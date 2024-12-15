@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="header">
+        <span class="material-symbols-outlined back-icon" [routerLink]="['/tasks']" title="Back to List">
+            arrow_back_ios
+        </span>
+    </div>
+    <h2>Edytuj zadanie</h2>
+    <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="title">Tytuł</label>
+            <input id="title" type="text" class="form-control" formControlName="title" placeholder="Wprowadź tytuł" />
+        </div>
+
+        <div class="form-group">
+            <label for="description">Opis</label>
+            <textarea id="description" class="form-control" formControlName="description"
+                placeholder="Wprowadź opis"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="status">Status</label>
+            <select id="status" class="form-control" formControlName="status">
+                <option value="Otwarte">Otwarte</option>
+                <option value="W trakcie">W trakcie</option>
+                <option value="Zakończone">Zakończone</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="taskForm.invalid">
+            Zapisz zmiany
+        </button>
+    </form>
+</div>

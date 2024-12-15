@@ -1,0 +1,55 @@
+<body>
+  <div class="task-list-container">
+    <button [routerLink]="['/add-task']">Dodaj nowe zadanie</button>
+    <table id="task-table">
+      <thead>
+        <tr>
+          <th>Zadanie</th>
+          <th>Status</th>
+          <th>Przypisany Użytkownik</th>
+          <th>Przypisz</th>
+          <th>Edytuj</th>
+          <th>Usuń zadanie</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="tr_click" *ngFor="let task of tasks" [routerLink]="['/tasks', task.id]">
+          <td [routerLink]="['/tasks', task.id]">{{ task.title }}</td>
+          <td>{{ task.status }}</td>
+          <td>{{ task.assignedTo?.username || 'Nie przypisano' }}</td>
+          <td>
+            <button (click)="assignTask(task.id); $event.stopPropagation()">Przypisz mnie</button>
+          </td>
+          <td>
+            <button [routerLink]="['/tasks/edit', task.id]" (click)="$event.stopPropagation()">Edytuj</button>
+          </td>
+          <td>
+            <button (click)="deleteTask(task.id); $event.stopPropagation()">X</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const tableBody = document.querySelector("#task-table tbody");
+
+      const observer = new MutationObserver(() => {
+        const rows = document.querySelectorAll("#task-table tbody tr");
+        console.log("Zmiana w tabeli. Liczba wierszy:", rows.length);
+
+        rows.forEach(row => {
+          const statusCell = row.querySelector("td:nth-child(2)");
+          console.log("Status wiersza:", statusCell ? statusCell.textContent.trim() : "Brak statusu");
+          if (statusCell && statusCell.textContent.trim().toLowerCase() === "zakończone") {
+            row.classList.add("finished-task");
+          }
+        });
+      });
+
+      observer.observe(tableBody, { childList: true, subtree: true });
+    });
+  </script>
+
+</body>

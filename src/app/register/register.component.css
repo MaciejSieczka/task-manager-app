@@ -1,0 +1,71 @@
+.container {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    background-color: hsla(73, 85%, 87%, 0.433);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin-top: 30px;
+    box-sizing: border-box;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333333;
+    font-size: 32px;
+    text-align: center;
+}
+
+.form-control {
+    font-weight: 300;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.message {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+}
+
+.message a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.message a:hover {
+    text-decoration: underline;
+}
